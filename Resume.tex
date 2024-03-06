@@ -1,0 +1,163 @@
+%------------------------
+% Resume Template
+% Author : Anubhav Singh
+% Github : https://github.com/xprilion
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,22pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor} % 引入顏色包
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,   % 啟用顏色連結
+    linkcolor = blue,    % 內部連結的顏色，例如 \ref 的連結
+    filecolor = magenta, % 文件連結的顏色
+    urlcolor = blue,     % 外部 URL 的顏色
+    citecolor = green,   % 引用連結的顏色
+}
+\usepackage{fontspec}    % 加這個就可以設定字體
+\usepackage{xeCJK}       % 讓中英文字體分開設置
+\setCJKmainfont{標楷體}   % 設定中文為系統上的字型，而英文不去更動，使用原TeX字型
+\XeTeXlinebreaklocale "zh"         % 這兩行一定要加，中文才能自動換行
+\XeTeXlinebreakskip = 0pt plus 1pt % 這兩行一定要加，中文才能自動換行
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 }
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProject}[3]{
+  \vspace{-2pt}\item\small
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{#2} \\
+    \end{tabular*}\vspace{-5pt}
+    \vspace{5pt}
+    \newline{#3}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Cheng-Si Yu}} & Email: \href{mailto:thomasyu9393@gmail.com}{\underline{thomasyu9393@gmail.com}}\\
+  Github: \href{https://github.com/thomasyu9393}{\underline{https://github.com/thomasyu9393}} & Mobile:~~~+886-\\
+\end{tabular*}
+
+
+%-----------EDUCATION--------------
+\section{Education}
+
+\resumeSubHeadingListStart
+\resumeSubheading
+  {National Yang Ming Chiao Tung University}{Hsinchu, Taiwan}
+  {Pursuing Bachelor's Degree in Computer Science; Overall GPA: 4.23/4.3 (Rank: 10th/192)}{Sep. 2022 - Present}
+  {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Relevant Courses:} Data Structures and Object-oriented Programming, Introduction to Algorithms, Probability, Introduction to Database Systems, Introduction to Computer Networks, Competitive Programming, Elementary Graph Theory}}}
+ 
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+\resumeSubHeadingListStart
+    \resumeProject
+    {NBA Stats LINE Bot}{PostgreSQL, Python, Crawler}
+    {The final project for \textit{introduction to database systems} course. A LINE Bot for users to get up-to-date NBA player/team statistics. The program periodically crawls the NBA web page online, parses the stats, and updates the data which stored on AWS Relational Database Service (RDS) instance. With web-based framework Flask, the LINE platform can send users' messages as the HTTP request to the server (our program) via Webhook URL, then, the program can do SQL queries and give the response through Messaging API. \href{https://github.com/thomasyu9393/NBA-Stats-LINE-BOT}{\underline{Link}}}
+    \resumeProject
+    {Pikachu Volleyball Game}{Verilog}
+    {The final project for \textit{digital circuit lab} course. The main program was designed to run under a finite state machine, including initialization, waiting, adjustment, display, and other states. We implemented the ball, the boundary, an user, and a simple robot to play the game. The system clock plays an important role in it, for instance, deboucing of the buttom click on the Artix-7 FPGA board, and simulation of the trajectory of the ball. Finally, integrate all the components to complete the game. \href{https://github.com/thomasyu9393/PikachuVolleyball}{\underline{Link}}}
+\resumeSubHeadingListEnd
+
+
+%-----------Skills-----------------
+%\section{Skills}
+%\begin{itemize}[leftmargin=*]
+%\item {\textbf{Programming Language} C/C++, Python, Java, JavaScipt, Shell Script, HTML, SQL}
+%\item {\textbf{Framework} React, Flask}
+%\item {\textbf{Tools} Git, Linux, Docker}
+%\end{itemize}
+
+
+%-----------Awards-----------------
+\section{Awards}
+\begin{itemize}[leftmargin=*]
+\item {\textbf{Bronze Award of the 2023 ICPC Asia Taoyuan Regional Programming Contest}: Forty-fifth place out of 100 teams.}
+\item {\textbf{Academic Achievements Awards (Top 5\% in the class)}: Spring 2023 (GPA 4.3), Fall 2023 (GPA 4.3)}
+\item {\textbf{Fundamental Course Awards (Top 5\% of the course)}: Discrete Mathematics, Digital Circuit Design}
+\end{itemize}
+
+
+%---------Extracurricular----------
+%\section{Extracurricular}
+%\begin{itemize}[leftmargin=*]
+%\item
+%	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+%	\textbf{} & Jul. 2023 - Present \\
+%	\end{tabular*}
+%\end{itemize}
+
+\vspace{10pt}
+Create Time: 2024/03/06 23:29
+
+\end{document}
